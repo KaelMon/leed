@@ -1,0 +1,16 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>Your Pragmatic Catalog</h1>
+
+<% @projects.each do |project| %>
+  <div class="entry">
+	<%= image_tag(project.image_url) %>
+	<h3><%= project.title %></h3>
+	<%= sanitize(project.description) %>
+	<div class="point_line">
+	  <span class="point"><%= project.point %></span>
+	</div>
+  </div>
+<% end %>
